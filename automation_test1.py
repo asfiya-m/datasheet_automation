@@ -45,7 +45,7 @@ def generate_master_datasheet(uploaded_file):
     # output_file = "Master_DataSheet_Generated_v3.xlsx"
     # --- TIMESTAMPED OUTPUT FILE ---
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
-    output_path = f"Master_DataSheet_{timestamp}.xlsx"
+    output_filename = f"Master_DataSheet_{timestamp}.xlsx"
 
 
     # Category normalization map
@@ -177,9 +177,14 @@ def generate_master_datasheet(uploaded_file):
 
 
     # Save the workbook
-    wb.save(output_path)
-    return output_path
-    
-    
+    # Save the workbook
     #wb.save(output_file)
     #print(f"✅ Master file generated: {output_file}")
+    #return output_file
+
+    output = BytesIO()
+    wb.save(output)
+    output.seek(0)
+
+    print(f"✅ Master file ready for download: {output_filename}")
+    return output, output_filename
