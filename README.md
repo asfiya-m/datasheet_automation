@@ -25,6 +25,4 @@ This Streamlit web app allows internal users to generate a master equipment data
 
 ---
 
-## 🏗 File Structure
-
 
