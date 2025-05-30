@@ -37,6 +37,7 @@ def generate_master_datasheet(uploaded_file):
     from openpyxl.utils import get_column_letter
     from collections import defaultdict
     from datetime import datetime
+    from io import BytesIO
     #from pathlib import Path
 
     # --- CONFIGURATION ---
@@ -44,7 +45,7 @@ def generate_master_datasheet(uploaded_file):
     # output_file = "Master_DataSheet_Generated_v3.xlsx"
     # --- TIMESTAMPED OUTPUT FILE ---
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M")
-    output_file = f"Master_DataSheet_{timestamp}.xlsx"
+    output_path = f"Master_DataSheet_{timestamp}.xlsx"
 
 
     # Category normalization map
@@ -176,5 +177,9 @@ def generate_master_datasheet(uploaded_file):
 
 
     # Save the workbook
-    wb.save(output_file)
-    print(f"✅ Master file generated: {output_file}")
+    wb.save(output_path)
+    return output_path
+    
+    
+    #wb.save(output_file)
+    #print(f"✅ Master file generated: {output_file}")
