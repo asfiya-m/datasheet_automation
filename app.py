@@ -15,30 +15,24 @@ st.set_page_config(page_title="Master Equipment Sheet Generator", layout="center
 st.title("📊 Master Equipment Data Sheet Generator")
 
 st.markdown("""
-            This tool allows you to upload your equipment datasheet Excel file and generate a Master datasheet.
-            
-            
-            The parameters in each equipment sheet will be organized into five input categories:
-                
-                
-                - **SysCAD Inputs**
-                
-                
-                - **Engineering Inputs**
-                
-                
-                - **Lab/Pilot Inputs**
-                
-                
-                - **Project Constants**
-                
-                
-                - **Vendor Inputs**
-                
-                
-            Upload your file, click **Generate Master Datasheet**, and download the sheet!""")
+Welcome to the **Master Equipment Sheet Generator**!  
+This tool allows you to upload your equipment datasheet Excel file and automatically generate a clean, categorized Master Excel file.
 
-uploaded_file = st.file_uploader("Upload your Datasheets Excel (.xlsm)", type=["xlsm"])
+Each equipment sheet will be organized into five input categories:
+
+- **SysCAD Inputs**
+- **Engineering Inputs**
+- **Lab/Pilot Inputs**
+- **Project Constants**
+- **Vendor Inputs**
+
+Upload your file, click **Generate Master Datasheet**, and download the sheet!
+""")
+
+#uploaded_file = st.file_uploader("Upload your Datasheets Excel (.xlsm)", type=["xlsm"])
+st.markdown("#### 📤 **Upload Equipment Datasheet (.xlsm)**")
+uploaded_file = st.file_uploader(" ", type=["xlsm"])
+
 
 if uploaded_file:
     if st.button("Generate Master DataSheet"):
