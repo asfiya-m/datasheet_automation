@@ -1,10 +1,5 @@
-import streamlit as st
-from io import BytesIO
-from datetime import datetime
-from automation_test1 import generate_master_datasheet
-from populate_syscad_inputs_rev1 import populate_syscad_inputs
-
 """
+
 app.py
 
 Streamlit frontend for automating the generation and population of a Master Equipment Datasheet.
@@ -17,7 +12,14 @@ Steps:
 
 Author: Asfiya Khanam
 Created: June 2025
+
 """
+
+import streamlit as st
+from io import BytesIO
+from datetime import datetime
+from automation_test1 import generate_master_datasheet
+from populate_syscad_inputs_rev1 import populate_syscad_inputs
 
 st.title("📄 Master Equipment Datasheet Automation Tool")
 
@@ -26,8 +28,6 @@ This tool helps you:
 1. Generate a clean master datasheet from your raw Excel input.
 2. Populate the master sheet with SysCAD streamtable data.
 
-Built to automate, organize, and reduce manual effort in preparing process equipment datasheets.
----
 """)
 
 # ------------------------
